@@ -1,105 +1,149 @@
-
-
-/**/
-p {
- 
-  margin-right: 150px;
-  margin-left: 150px;
-}
-
-*{
-  margin: 0;
-  padding: 0;
+body {
   font-family: 'Nuosu SIL', serif;
+  background-color: silver;
 }
-.header{
-  min-height: 100vh;
-  width: 100%;
-  background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(pic/face.png);
-  background-position: center;
-  background-size: cover;
-  position: relative;
+
+header {
+  background: #333;
+  color: white;
+  padding: 1rem;
 }
-.set{
-  margin-left: 15px;
-}
-nav{
+
+nav {
   display: flex;
-  width: 10;
-  height: 5;
   justify-content: space-between;
   align-items: center;
 }
-.nav-links{
-  flex:1;
-  text-align: right;
-}
-.nav-links ul li{
-  list-style: none;
-  display: inline-block;
-  padding: 8px 12px;
-  position: relative;
-}
-.nav-links ul li a{
-  color: #fff;
-  text-decoration: none;
-  font-size: 13px;
-}
-.nav-links ul li::after{
-  content: '';
-  width: 0%;
-  height: 10px;
-  background: #fff;
-  display: block;
-  margin: auto;
-  transition: 0.2s;
-}
-.nav-links ul li:hover::after{
-  width: 100%;
+
+.set img {
+  width: 90px;
+  height: 60px;
 }
 
-.text-box{
-  width: 90%;
-  color: #fff;
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-links ul li {
+  position: relative;
+}
+
+.nav-links ul li a {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+}
+
+.nav-links ul li:hover .dropdown {
+  display: block;
+}
+
+.dropdown {
+  display: none;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
+  background: #444;
+  top: 100%;
+  left: 0;
+  min-width: 200px;
+}
+
+.dropdown ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown ul li a {
+  color: white;
+  padding: 0.5rem 1rem;
+  display: block;
+  text-decoration: none;
+}
+
+.dropdown ul li a:hover {
+  background: #555;
+}
+
+.academicsmainpage {
+  padding: 2rem;
   text-align: center;
 }
-.text-box h1{
-  font-size: 62px;
+
+.academicsmainpage h1 {
+  font-size: 2rem;
 }
-.text-box p{
-  margin: 10px 0 40px;
-  font-size: 14px;
-  color: #FFF;
+
+.academicsmainpage p {
+  font-size: 1rem;
+  margin: 1rem auto;
+  max-width: 800px;
 }
-.hero-btn{
-  display: inline-block;
-  text-decoration: none;
-  color: #fff;
-  border: 1px solid #fff;
-  padding: 12px 34px;
-  background: transparent;
+
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  max-width: 800px;
+  margin: 2rem auto;
+}
+
+.dropdown {
   position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  background-color: red;
+  color: white;
+  padding: 1rem;
+  font-size: 16px;
+  border: none;
   cursor: pointer;
 }
-.hero-btn:hover{
 
-  border: 1px solid #fff;
-  background: rgb(255, 124, 37);
-  transition: 0.5s;
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
 }
 
-@media(max-width:700px){
-  .text-box h1{
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: darkred;
+}
+
+@media (max-width: 700px) {
+  .text-box h1 {
       font-size: 20px;
   }
-  .nav-links ul li{
+  .nav-links ul li {
       display: block;
   }
-  .nav-links{
+  .nav-links {
       position: absolute;
       background: rgb(255, 124, 37);
       height: 100vh;
@@ -110,36 +154,7 @@ nav{
       z-index: 2;
       transition: 1s;
   }
-  .nav-links ul{
+  .nav-links ul {
       padding: 30px;
   }
-}
-
-
-
-/**/
-
-
-h1 h2 h3 {
-  font-family: system-ui;
-}
-
-.cards{
-  animation-duration: 2s;
-  animation-name: slidein;
-}
-@keyframes slidein {
-  from {
-    margin-left: 100%;
-    width: 300%;
-  }
-
-  to {
-    margin-left: 45%;
-    width: 100%;
-  }
-}
-
-p {
-  font-family: serif;
 }
