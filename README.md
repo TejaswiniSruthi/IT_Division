@@ -13,4 +13,4 @@ Study materials and resources for the IT division (2024 batch).
 
 ## ✨ Maintained By
 
-**Tejaswini**
+### **Tejaswini Thambabathula**
